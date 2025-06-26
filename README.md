@@ -20,7 +20,7 @@ A notebook is provided in jupyter/pytorch-chaRNN.ipynb. I ran it with jupyter_cl
 ## Command-line
 To train a model, run chaRNN-train.py with your text corpus as the command-line argument. \
 To generate text with your model, use the generate-text.py script, with --model "path/to/model.pth" --length \[number of chars to generate], --temp \[temperature value \(float)], and --seed "my seed text". \
-Example: `python3 generate-text.py --model "shakespeare-model.pth" --length 30 -- temp 1.2 --seed "Alas poor Yorick"`
+Example: `python3 generate-text.py --model "shakespeare-model.pth" --length 30 --temp 1.2 --seed "Alas poor Yorick"`
 
 
 
