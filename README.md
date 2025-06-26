@@ -34,6 +34,7 @@ BRUTUS:\
 What courteanly grav.
 
 
+Then, when anyone asks you "What's the big deal about all this GenAI stuff?" you can demonstrate the immense utility and beauty of the recurrent neural network.  
 
 
 
