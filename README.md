@@ -5,11 +5,11 @@ I'm trying to get back into learning PyTorch, so I figured I'd port this classic
 
 
 # Setup and Environtment
-I have this running in Python 3.11.9 on MacOS 14.7.6 (x86) (As of June 2025, Python >=3.13 had some issues with PyTorch), with torch 2.1.1. Torch isn't yet compatible with more recent versions of numpy, so I had to downgrade numpy to 1.26.4. 
+I have this running in Python 3.11.9 on MacOS 14.7.6 (x86) with torch 2.1.1. Torch isn't yet compatible with more recent versions of numpy, so I had to downgrade numpy to 1.26.4. 
 If you're new to Python, I suggest setting up a virtual environment, especially for using PyTorch, as things can get hairy. You can find more details [here](https://docs.python.org/3/library/venv.html), but here's the quickstart version: \
-Open a new terminal window, navigate to where you want your working directory, and create a folder for the project. Enter the folder, and run \ 
-`python3 -m venv .venv`
-`source .venv/bin/activate` \
+Open a new terminal window, navigate to where you want your working directory, and create a folder for the project. Enter the folder, and run\ 
+`python3 -m venv .venv`\
+`source .venv/bin/activate`\
 Then proceed to install PyTorch, etc. If you open a new terminal window, you will need to again activate the virtual env with `source` command above.
 
 
