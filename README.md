@@ -25,13 +25,13 @@ Example: `python3 generate-text.py --model "shakespeare-model.pth" --length 30 -
 ## Datasets
 I've included the Shakespeare dataset here in /datasets so you too may generate beautiful works like this emotional segment of the well-known *"Much Alief About Gandeth"*:\
 JULIET:\
-Go, go alief feech it, right.\
+Go, go alief feech it, right.
 
 ISABELLA:\
-A gandeth.\
+A gandeth.
 
 BRUTUS:\
-What courteanly grav.\
+What courteanly grav.
 
 
 
