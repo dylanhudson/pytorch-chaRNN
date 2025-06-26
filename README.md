@@ -27,10 +27,10 @@ I've included the Shakespeare dataset here in /datasets so you too may generate 
 
 >JULIET:\
 >Go, go alief feech it, right.
-
+>
 >ISABELLA:\
 >A gandeth.
-
+>
 >BRUTUS:\
 >What courteanly grav.  
 
