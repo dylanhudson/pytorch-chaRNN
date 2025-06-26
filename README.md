@@ -1,7 +1,7 @@
 # pytorch-chaRNN
 
 ## Background
-I'm trying to get back into learning PyTorch, so I figured I'd port this classic project based on <https://github.com/karpathy/char-rnn> to run in a more modern environment. 
+I'm trying to get back into learning PyTorch, so I figured I'd port this classic project based on <https://github.com/karpathy/char-rnn> to run in a more modern environment, using <https://github.com/nikhilbarhate99/Char-RNN-PyTorch> as a guide.  
 
 
 # Setup and Environtment
