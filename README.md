@@ -10,7 +10,9 @@ If you're new to Python, I suggest setting up a virtual environment, especially 
 Open a new terminal window, navigate to where you want your working directory, and create a folder for the project. Enter the folder, and run\
 `python3 -m venv .venv`\
 `source .venv/bin/activate`\
-Then proceed to install PyTorch, etc. If you open a new terminal window, you will need to again activate the virtual env with `source` command above.
+Then proceed to install PyTorch (`pip install torch`). 
+
+Note-- if you open a new terminal window, you will need to again activate the virtual env with `source` command above.
 
 
 # Usage
