@@ -9,7 +9,7 @@ from textrnn import TextRNN
 from textdataset import TextDataset
     
 def train_model(text_file, epochs, batch_size, learning_rate, 
-                hidden_size, num_layers, seq_length, save_path):
+                hidden_size, num_layers, seq_length, save_path, load_path):
     
     #device initialization - add support for opencl or apple silicon?
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -23,9 +23,9 @@ def train_model(text_file, epochs, batch_size, learning_rate,
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
-    if save_path:
-        model.load_state_dict(torch.load(save_path, map_location=device))
-        print(f'Model loaded from {save_path}')
+    if load_path:
+        model.load_state_dict(torch.load(load_path, map_location=device))
+        print(f'Model loaded from {load_path}')
 
     print('Starting training...')
 
@@ -84,7 +84,7 @@ def train_model(text_file, epochs, batch_size, learning_rate,
         
         #save the model every 50 epochs
         if (epoch + 1) % 50 == 0:
-            torch.save(model.state_dict(), f'text_rnn_epoch_{epoch + 1}.pth')
+            torch.save(model.state_dict(), f'{save_path}_{epoch + 1}.pth')
             print(f'Model saved at epoch {epoch + 1}')
     
     print('Training complete.')
@@ -103,11 +103,12 @@ if __name__ == "__main__":
     parser.add_argument('--num_layers', type=int, default=3, help='Number of layers in the RNN.')
     parser.add_argument('--seq_length', type=int, default=120, help='Sequence length ')
     parser.add_argument('--save_path', type=str, default="", help='Path to save the trained model.')
+    parser.add_argument('--load_path', type=str, default="", help='Path to load a trained model.')
 
     args = parser.parse_args()
 
     model, dataset = train_model(args.text_file, args.epochs, args.batch_size, args.learning_rate,
-                args.hidden_size, args.num_layers, args.seq_length, args.save_path)
+                args.hidden_size, args.num_layers, args.seq_length, args.save_path, args.load_path)
     
     if args.save_path:
         model.export_model(args.save_path)
