@@ -8,8 +8,8 @@ import argparse
 from textrnn import TextRNN
 from textdataset import TextDataset
     
-def train_model(text_file, epochs=500, batch_size=50, learning_rate=0.001, 
-                hidden_size=128, num_layers=3, seq_length=120, save_path=None):
+def train_model(text_file, epochs, batch_size, learning_rate, 
+                hidden_size, num_layers, seq_length, save_path):
     
     #device initialization - add support for opencl or apple silicon?
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -93,7 +93,7 @@ def train_model(text_file, epochs=500, batch_size=50, learning_rate=0.001,
 
 if __name__ == "__main__":
 
-    # Command line arguments: the man
+    # Command line arguments: 
     parser = argparse.ArgumentParser(description='Train an RNN model on a text file.')
     parser.add_argument('--text_file', type=str, help='Path to the training data file.')
     parser.add_argument('--epochs', type=int, default=300, help='Number of training epochs.')

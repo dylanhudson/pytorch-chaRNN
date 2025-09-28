@@ -51,12 +51,14 @@ if __name__ == "__main__":
     parser.add_argument('--temperature', type=float, default=1.0, help='Temperature for sampling (higher = more random).')  
     args = parser.parse_args()
 
+    
+
     #load model and dataset
     dataset = TextDataset.load_dataset_from_json(args.dataset)
     model = TextRNN.load_model(args.model, vocab_size=dataset.vocab_size, num_layers=3, hidden_size=128)
     
     generated_text = generate_text(model, dataset, torch.device('cuda' if torch.cuda.is_available() else 'cpu'),
-                               seed_text='Behold ', length=300, temperature=1) 
+                               seed_text=args.seed_text, length=args.length, temperature=args.temperature) 
     print(f"Generated Text: {generated_text}")
 
 
