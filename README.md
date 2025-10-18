@@ -22,7 +22,9 @@ A notebook is provided in jupyter/pytorch-chaRNN.ipynb. I ran it with jupyter_cl
 ## Command-line
 To train a model, run chaRNN-train.py with your text corpus as the command-line argument. \
 To generate text with your model, use the generate-text.py script, with --model "path/to/model.pth" --length \[number of chars to generate], --temp \[temperature value \(float)], and --seed "my seed text". \
-Example: `python3 generate-text.py --model "shakespeare-model.pth" --length 30 --temp 1.2 --seed "Alas poor Yorick"`
+Example: `python3 generate-text.py --model "shakespeare-model.pth" --length 30 --temp 1.2 --seed "Alas poor Yorick"`  
+  
+The `sync_char_vocabs.py` script is provided in case you want to train the same model with different datasets, e.g. to fine-tune with different data or for transfer learning use-cases. Usage is `python3 sync_char_vocabs.py file1.txt file2.txt file3.txt` for as many files as you want to make cross-compatible. Any chars missing from a given file that are present in one or more of the others will be appended to the end of the particular file. 
 
 ## Datasets
 I've included the Shakespeare dataset here in `/datasets` so you too may generate beautiful works like this emotional segment of the well-known *"Much Alief About Gandeth"*:
