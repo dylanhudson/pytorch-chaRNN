@@ -58,7 +58,7 @@ if __name__ == "__main__":
     dataset = TextDataset.load_dataset_from_json(args.dataset)
     model = TextRNN.load_model(args.model, vocab_size=dataset.vocab_size, num_layers=3, hidden_size=args.hidden_size)
     
-    generated_text = generate_text(model, dataset, torch.device('cuda' if torch.cuda.is_available() else 'cpu'),
+    generated_text = generate_text(model.cuda(), dataset, torch.device('cuda' if torch.cuda.is_available() else 'cpu'),
                                seed_text=args.seed_text, length=args.length, temperature=args.temperature) 
     print(f"Generated Text: {generated_text}")
 
